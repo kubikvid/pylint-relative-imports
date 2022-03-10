@@ -24,19 +24,39 @@ from project.employee.models import Employee  # <- Good
 
 ## Installation
 
-```
+```bash
 pip install pylint-relative-imports
 ```
 
 ## Usage
 
 In `pylint.rc`:
-```
+
+```bash
 [MASTER]
 load-plugins=pylint_relative_imports.relative_imports_checker
 ```
 
 Or, in terminal:
-```
+
+```bash
 pylint --load-plugins pylint_relative_imports.relative_imports_checker foo.py
+```
+
+## Strict mode
+
+If you want that any relative imports raise an error, you use `strict_relative_imports_checker` instead of `relative_imports_checker`.
+So even `from .utils import is_relative` will be catch.
+
+In `pylint.rc`:
+
+```bash
+[MASTER]
+load-plugins=pylint_relative_imports.strict_relative_imports_checker
+```
+
+Or, in terminal:
+
+```bash
+pylint --load-plugins pylint_relative_imports.strict_relative_imports_checker foo.py
 ```
