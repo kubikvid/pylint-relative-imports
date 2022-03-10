@@ -32,7 +32,7 @@ pip install pylint-relative-imports
 
 In `pylint.rc`:
 
-```bash
+```toml
 [MASTER]
 load-plugins=pylint_relative_imports.relative_imports_checker
 ```
@@ -50,7 +50,7 @@ So even `from .utils import is_relative` will be catch.
 
 In `pylint.rc`:
 
-```bash
+```toml
 [MASTER]
 load-plugins=pylint_relative_imports.strict_relative_imports_checker
 ```
